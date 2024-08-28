@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  background-color: blue;
+  width: 100%;
+  height: 70px;
+}
+
+.input {
+  width: 450px;
+  height: 40px;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 10px 10px 40px;
+}
+
+.input:hover {
+  cursor: pointer;
+  box-shadow: 2px 1px 5px black;
+}
+
+.submitBtn {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 18px;
+}
+
+.submitBtn:hover {
+  cursor: pointer;
+  box-shadow: 2px 1px 5px black;
+}

@@ -1,0 +1,18 @@
+.LoadMoreWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.LoadMoreBtn {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.LoadMoreBtn:hover {
+  color: blue;
+}
