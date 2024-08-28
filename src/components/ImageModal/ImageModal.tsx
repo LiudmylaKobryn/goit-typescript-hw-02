@@ -15,7 +15,19 @@ const customStyles = {
 
 Modal.setAppElement("#root");
 
-export default function ImageModal({ modalIsOpen, closeModal, src, alt }) {
+interface ImageModalProps {
+  modalIsOpen: boolean;
+  closeModal: () => void;
+  src: string;
+  alt: string;
+}
+
+export default function ImageModal({
+  modalIsOpen,
+  closeModal,
+  src,
+  alt,
+}: ImageModalProps) {
   return (
     <Modal
       isOpen={modalIsOpen}

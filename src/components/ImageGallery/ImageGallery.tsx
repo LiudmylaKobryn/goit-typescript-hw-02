@@ -1,7 +1,21 @@
 import ImageCard from "../ImageCard/ImageCard";
 import s from "./ImageGallery.module.css";
 
-const ImageGallery = ({ items, onImageClick }) => {
+interface ImageItem {
+  id: string;
+  urls: {
+    small: string;
+    regular: string;
+  };
+  alt_description: string;
+}
+
+interface ImageGalleryProps {
+  items: ImageItem[];
+  onImageClick: (image: { src: string; alt: string }) => void;
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({ items, onImageClick }) => {
   if (items.length === 0) return null;
 
   return (
