@@ -8,15 +8,24 @@ import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import { Toaster } from "react-hot-toast";
 import ImageModal from "./components/ImageModal/ImageModal";
 
+interface Image {
+  id: string;
+  alt_description: string;
+  urls: {
+    small: string;
+    regular: string;
+  };
+}
+
 function App() {
-  const [data, setData] = useState([]);
-  const [query, setQuery] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [page, setPage] = useState(1);
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [modalUrl, setModalUrl] = useState("");
-  const [modalAlt, setModalAlt] = useState("");
+  const [data, setData] = useState<Image[]>([]);
+  const [query, setQuery] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isError, setIsError] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+  const [modalIsOpen, setIsOpen] = useState<boolean>(false);
+  const [modalUrl, setModalUrl] = useState<string>("");
+  const [modalAlt, setModalAlt] = useState<string>("");
 
   useEffect(() => {
     if (query.trim() === "") return;
@@ -40,16 +49,19 @@ function App() {
   const handleLoadMore = () => {
     setPage((prev) => prev + 1);
   };
-  const handleSetQuery = (query) => {
+
+  const handleSetQuery = (query: string) => {
     setQuery(query);
     setData([]);
     setPage(1);
   };
-  const openModal = ({ src, alt }) => {
+
+  const openModal = ({ src, alt }: { src: string; alt: string }) => {
     setModalUrl(src);
     setModalAlt(alt);
     setIsOpen(true);
   };
+
   const closeModal = () => {
     setIsOpen(false);
   };
